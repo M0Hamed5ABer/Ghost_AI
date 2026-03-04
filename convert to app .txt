@@ -1,0 +1,5 @@
+open powershell
+
+pip install pyinstaller
+
+pyinstaller --onefile --windowed Ghost_Ai.py

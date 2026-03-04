@@ -95,7 +95,7 @@ def build_knowledge_prompt(question):
     prompt = f"""
 أنت مساعد ذكي.
 
-المعلومات التالية مقتطفة من ملف محلي اسمه: {file}
+المعلومات من ملف: {file}
 
 {snippet}
 
@@ -108,7 +108,7 @@ def build_knowledge_prompt(question):
     return prompt
 
 DATA_FOLDER = "data"
-os.makedirs(DATA_FOLDER, exist_ok=True)
+# os.makedirs(DATA_FOLDER, exist_ok=True) 
 
 
 def load_text_data(filename):
@@ -169,7 +169,7 @@ BTN_COLOR = "#1e293b"
 class ChatMemory:
     def __init__(self):
         self.conversation_history = []
-        self.max_history = 30
+        self.max_history = 300
         self.load_history()
     
     def add_message(self, role, content):
